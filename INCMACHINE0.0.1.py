@@ -56,6 +56,7 @@ def crackPwd(chunk, hashType, password):
     """This is the function that is sent to the nodes"""
     #Insert haslib matching function (similar to youtube video)
     for item in chunk:
+        item = item.strip() 
         if hashType == "MD5":
             testHash = hashlib.md5(item).hexdigest()
         elif hashType == "SHA512":
