@@ -1,4 +1,16 @@
 import dispy
+import hashlib
+import os
+
+def countNodes():
+
+    os.system('nmap -p 61591 10.0.0.0/24 -oN result.txt | grep open')
+    data = open('result.txt').read()
+    nodeCount = data.count('open')
+    data.close()
+
+    os.remove('result.txt')
+    return nodeCount
 
 def selectMode(mode = "list"):
     """Function for selecting mode (brute force or wordList)
@@ -11,29 +23,46 @@ def selectMode(mode = "list"):
 
 def readList():
     """Function for selecting and reading wordlist"""
-    wordList = open("worst-passwords-2017.txt", 'r')
-    newWordList =[]
-    wordCount = 0
-    for line in wordList.readline():
-        line = line.strip()
-        newWordList.append(line)
-        count += 1
-    return newWordList, wordCount
+    wordList = open("worst-passwords-2017.txt", 'r').readlines()
+    return wordList
 
 
-def splitListIntoTasks(wordList, wordCount, count_nodes):
+def splitListIntoTasks(wordList):
     """Returns given_list split into chunks
-Given_list can be an actual given wordlist
-Brute is a boolean, default false.
-If brute is true this function will generate a wordlist then split that as appropriate (might be more modular to just have brute as it’s own function that gets called from splitting, that collects what the char set is, then generates and returns the wordlist
+Given_list is handed to function by selectMode()
 """
 
-    #Insert function that splits a wordList into pieces of 10 lines (1000 in proper, but when testing with 100 word wordlist)
+    chunkList = []
+    nodeCount = countNodes()
+    factor = 3
+    equalChunks = nodeCount * factor
+
+    chunkSize = len(wordList) // equalChunks
+
+    count=0
+    for x in range(equalChunks):
+        firstIndex=chunkSize * count
+        lastIndex=firstIndex + chunkSize
+        workingList = wordList[firstIndex : lastIndex]
+        chunkList.append(workingList)
+        count += 1
+    if len(wordList) % equalChunks != 0:
+        remainder = len(wordList) % equalChunks
+        workingList = wordList[-remainder:]
+        chunkList.append(workingList)
+
 
 def crackPwd(chunk, hashType, password):
     """This is the function that is sent to the nodes"""
     #Insert haslib matching function (similar to youtube video)
-
+    for item in chunk:
+        if hashType == "MD5":
+            testHash = hashlib.md5(item).hexdigest()
+        elif hashType == "SHA512":
+            testHash = hashlib.sha512(item).hexdigest()
+        if testHash == password:
+            return item
+    return False
 
 
 def get_hash_type(password):
@@ -53,7 +82,7 @@ def generateBruteWordlist():
 password = "thunder"
 wordList = selectMode()
 chunkList = splitListIntoTasks(wordList)
-for chunk in wordList:
+for chunk in chunkList:
     cluster = dispy.JobCluster(crackPwd(chunk, hashType, password))
 
 #More logic needed down here regarding canceling jobs when we have found the password
