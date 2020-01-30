@@ -21,7 +21,7 @@ def readList():
     return newWordList, wordCount
 
 
-def splitListIntoTasks(wordList):
+def splitListIntoTasks(wordList, count_nodes):
     """Returns given_list split into chunks
 Given_list can be an actual given wordlist
 Brute is a boolean, default false.
