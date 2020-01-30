@@ -48,6 +48,7 @@ def generateBruteWordlist():
     #Insert function for determining what charset to use and depth (password length ) it should be
     #Insert function that uses determined parameters to create such a wordlist
     pass
+    return newWordList, wordCount
 
 password = "thunder"
 wordList = selectMode()
