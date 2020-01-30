@@ -8,3 +8,4 @@ def countNodes():
     data.close()
 
     os.remove('result.txt')
+    return count_nodes
