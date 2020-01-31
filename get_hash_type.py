@@ -19,5 +19,6 @@ def get_hash_type(password):
             hash_type = 'SHA-256'
             
     data.close()
+    os.remove('hash_type.txt')
     
     return hash_type
