@@ -69,7 +69,23 @@ def crackPwd(chunk, hashType, password):
 def get_hash_type(password):
      """This function determines the hash type(using hashid: https://github.com/psypanda/hashID)
 Return hash_type"""
-    #Insert function for determining hash type
+    data = open('hash_type.txt', 'w+')
+    
+    command = 'python3 hashid.py' + ' -m -o hash_type.txt \'' + password + '\''
+    
+    os.system(command)
+    
+    for line in data:
+        if 'MD5' in line:
+            hash_type = 'MD5'
+        
+        elif 'SHA-256' in line:
+            hash_type = 'SHA-256'
+            
+    data.close()
+    os.remove('hash_type.txt')
+    
+    #return hash_type
     return "MD5"
 
 
