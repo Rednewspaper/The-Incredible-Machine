@@ -1,28 +1,30 @@
 def menu():
-    programType = 3
     while True:
-        if programType == 1 or programType == 2:
-            break
-        else:
-            userInput = input("Enter 1 for Wordlist mode or Enter 2 for Bruteforce mode(1 or 2):")
-            try:
-                programType = int(userInput)
-            except ValueError:
-                pass
-            
-    if programType == 1:
-        listType = 3
-        while True:
-            if listType == 1 or listType == 2:
+        userInput = input("Enter 1 for Wordlist mode or Enter 2 for Bruteforce mode(1 or 2):")
+        try:
+            programType = int(userInput)
+            if programType == 1 or programType == 2:
                 break
             else:
-                userInput = input("Enter 1 for Default Wordlist or Enter 2 for Custom Wordlist(You need to provide the list)(1 or 2):")
-                try:
-                    listType = int(userInput)
-                except ValueError:
+                pass
+        except ValueError:
+            pass
+        
+    if programType == 1:
+        while True:
+            userInput = input("Enter 1 for Default Wordlist or Enter 2 for Custom Wordlist(You need to provide the list)(1 or 2):")
+            try:
+                listType = int(userInput)
+                if listType == 1 or listType == 2:
+                    break
+                else:
                     pass
+            except ValueError:
+                pass
+
         if listType == 1:
             return readList()
+
         elif listType == 2:
             import os
             while True:
@@ -36,19 +38,19 @@ def menu():
             #Need to add more logic to check if list is "useable"
             wordList = open(wordList, 'r').readlines()
             return wordList
-        
+
     elif programType == 2:
         while True:
-            #Probably needs some more info into what deep means(could'nt describe it good)
+            #Probably needs some more info into what deep means(couldn't describe it good)
             userInput = input("How deep?(integer):")  
             try:
                 bruteDeep = int(userInput)
                 break
             except ValueError:
                 pass
-            
         while True:
             #Needs input of different types of char sets 
+            print("The following are the available character sets for this program. char1 is a-z, char2 is a-z and A-Z and char3 is a-z,A-Z and 0-9")
             userInput = input("What character set do you want to use; char1, char2, char3:")
             if userInput == "char1":
                 charType = "test1"
@@ -61,8 +63,9 @@ def menu():
                 break
             else:
                 pass
-        
+
         #insert logic for creation of wordlist
-        
+
         generateBruteWordlist(bruteDeep, charType)
+
         return wordList
