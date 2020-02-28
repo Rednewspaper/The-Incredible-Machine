@@ -48,24 +48,6 @@ def menu():
                 break
             except ValueError:
                 pass
-        while True:
-            #Needs input of different types of char sets 
-            print("The following are the available character sets for this program. char1 is a-z, char2 is a-z and A-Z and char3 is a-z,A-Z and 0-9")
-            userInput = input("What character set do you want to use; char1, char2, char3:")
-            if userInput == "char1":
-                charType = "test1"
-                break
-            elif userInput == "char2":
-                charType = "test2"
-                break
-            elif userInput == "char3":
-                charType = "test3"
-                break
-            else:
-                pass
-
-        #insert logic for creation of wordlist
-
-        generateBruteWordlist(bruteDeep, charType)
-
-        return wordList
+        
+        charType = "test"
+        return bruteDeep, charType
