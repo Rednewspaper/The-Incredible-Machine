@@ -97,6 +97,16 @@ def get_hash_type(password):
 def generateBruteWordlist():
     #Insert function for determining what charset to use and depth (password length ) it should be
     #Insert function that uses determined parameters to create such a wordlist
+    while True:
+    depth = input("Enter depth(minimum 1 and maximum 7):")
+    try:
+        depth = int(depth)
+    except ValueError:
+        print("Please enter a number")
+    if depth > 0 and depth <= 7:
+        break
+    else:
+        print("Please enter a number that is minimum 1 and maximum 7")
     pass
     return newWordList, wordCount
 
