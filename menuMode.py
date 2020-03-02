@@ -1,6 +1,13 @@
 def menuMode():
     
     while True:
+        password = input("Enter the hash that is going to be cracked:")
+        print(password)
+        enterHash = input("Is this the correct hash?(y/n):")
+        if enterHash == "y" or enterHash == "Y":
+            break
+    
+    while True:
         programType = input("Enter 1 for Wordlist mode or Enter 2 for Bruteforce mode(or 0 for quit):")
         if programType == "1":
             while True:
