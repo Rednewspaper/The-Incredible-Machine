@@ -96,12 +96,12 @@ def endScreen(password, win=False):
         print (password, "=", win)
     else:
         print ("Unable to crack", password, "using the method you selected")
-    while True:
-        restart = input("Do you want to crack another hash/retry hash using another method?(y/n):")
-        if restart == "y" or restart == "Y":
-            menuMode()
-        else:
-            exit()
+    
+    restart = input("Do you want to crack another hash/retry hash using another method?(y/n):")
+    if restart == "y" or restart == "Y":
+        menuMode()
+    else:
+        exit()
 
 def mainLogic(password, wordList):
     win = False
