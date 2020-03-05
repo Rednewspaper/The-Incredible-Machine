@@ -63,7 +63,7 @@ def crackPwd(chunk, hashType, password):
 
 def getHashType(password, hashMode):
     """This function determines the hash type(using hashid: https://github.com/psypanda/hashID)
-    Return hash_type"""
+    Return hashType"""
     hashType = None
     if hashMode == 1:
         while True:
