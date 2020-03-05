@@ -73,8 +73,8 @@ def getHashType(password, hashMode):
                 break
             
     elif hashMode == 2:
-        data = open('hash_type.txt', 'w+')
-        command = 'python3 hashid.py' + ' -m -o hash_type.txt \'' + password + '\''
+        data = open('hashType.txt', 'w+')
+        command = 'python3 hashid.py' + ' -m -o hashType.txt \'' + password + '\''
         os.system(command)
 
         for line in data:
@@ -85,7 +85,7 @@ def getHashType(password, hashMode):
                 hashType = 'SHA-256'
 
         data.close()
-        os.remove('hash_type.txt')
+        os.remove('hashType.txt')
         hashType = 'MD5  #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     return hashType
 
@@ -114,7 +114,7 @@ def endScreen(password, win=False):
 def mainLogic(password, wordList):
     win = False
     chunkList = splitListIntoTasks(wordList)
-    hashType = get_hash_type(password)
+    hashType = getHashType(password)
     cluster = dispy.JobCluster(crackPwd, ip_addr='192.168.1.107')
     jobs = []
     password = "5c7686c0284e0875b26de99c1008e998"
