@@ -111,7 +111,7 @@ def endScreen(password, win=False):
     else:
         exit()
 
-def mainLogic(password, wordList):
+def mainLogic(password, wordList, hashMode):
     win = False
     chunkList = splitListIntoTasks(wordList)
     hashType = getHashType(password)
@@ -155,10 +155,10 @@ def menuMode():
                 listType = input("Enter 1 for Default Wordlist or Enter 2 for Custom Wordlist(You need to provide the list)(or 0 to go back):")
                 if listType == "1":
                     wordList = modeList()
-                    mainLogic(password, wordList)
+                    mainLogic(password, wordList, hashMode)
                 elif listType == "2":
                     wordList = modeCustom()
-                    mainLogic(password, wordList)
+                    mainLogic(password, wordList, hashMode)
                 elif listType == "0":
                     break
         elif programType == "2":
