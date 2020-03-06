@@ -4,7 +4,7 @@ import os
 
 def countNodes():
 
-    os.system('nmap -p 61591 192.168.1.0/24 | grep open > newresult.txt')
+    os.system('nmap -p 61591 10.0.0.0/24 | grep open > newresult.txt')
 
     data = open('newresult.txt', 'r')
     count=0
@@ -115,7 +115,7 @@ def mainLogic(password, wordList, hashMode):
     win = False
     chunkList = splitListIntoTasks(wordList)
     hashType = getHashType(password)
-    cluster = dispy.JobCluster(crackPwd, ip_addr='192.168.1.107')
+    cluster = dispy.JobCluster(crackPwd, ip_addr='10.0.0.1')
     jobs = []
     password = "5c7686c0284e0875b26de99c1008e998"
     for chunk in chunkList:
