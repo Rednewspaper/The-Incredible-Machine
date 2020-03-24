@@ -13,7 +13,7 @@ If you are not able  to SSH into your Raspberry Pi’s(due to it being set up fr
 The next step would be to actually SSH into your Pi’s, if the computer you are SSH from is a Windows this could easily be done by either install a Linux subsystem(which can easily by install using this [guide](https://docs.microsoft.com/en-us/windows/wsl/install-win10)) or using PuTTy.
 
 
-### Using a Linux subsystem
+#### Using a Linux subsystem
 
 Using Linux subsystem you can easily SSH into your Pi’s by opening your Linux subsystem from the Windows search bar. The command you need to enter is:
 
@@ -28,7 +28,7 @@ The default name of your Pi’s is “pi”, if this has been changed you will n
 
 Having done this you will be asked to enter the password of the Pi which by default is “raspberry”.
 
-### Using PuTTY
+#### Using PuTTY
  
 For using PuTTY you need to open the program and enter the IP of the Pi in the designated field.
 
