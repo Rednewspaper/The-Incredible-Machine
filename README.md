@@ -69,7 +69,7 @@ $ Cluster = dispy.JobCluster(crackPwd, ip_addr=’[IP address of master node]’
 Enter the dispy folder  on the slave nodes, which can be accessed using the following command:
 
 ```
-$ cd /home/[USER]/.local/lib
+$ cd /home/[USER]/.local/lib/dispy
 ```
 
 Start the dispynode.py program which executes jobs submitted by clients:
