@@ -82,7 +82,7 @@ This ip address is the address you want the program to use, default(without -i) 
 
 ### Main Node:
 
-Enter the folder where you ran the [installScriptMainNode](https://github.com/Rednewspaper/The-Incredible-Machine/blob/master/installScriptMainNode).
+Enter the folder where you ran the [installScriptMainNode](https://github.com/Rednewspaper/The-Incredible-Machine/blob/master/installScriptMainNode) and run the program.
 
 ```
 $ python3 INCMACHINE0.0.5a.py 
