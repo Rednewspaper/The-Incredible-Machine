@@ -21,10 +21,10 @@ The Incredible Machine requires nmap for node discovery(slave nodes) for usage i
 
 To collect The Incredible Machine and install its dependencies for the main node, collect and run [installScriptMainNode](https://github.com/Rednewspaper/The-Incredible-Machine/blob/master/installScriptMainNode):
 
-(in command block)
+``` 
 chmod +x installScriptMainNode
 ./installScriptMainNode
-(stop command block)
+```
 
 To install The Incredible Machine dependencies, collect and run [installScriptSlaveNode](https://github.com/Rednewspaper/The-Incredible-Machine/blob/master/installScriptSlaveNode):
 
