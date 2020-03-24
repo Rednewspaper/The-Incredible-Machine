@@ -15,11 +15,11 @@ Capabilities for cracking MD5 and SHA-256 encrypted hashes.
 
 ## Dependencies
 
-The Incredible Machine requires nmap for node discovery(slave nodes) for usage in brute force wordlist chunk size numeration. It requires [dispy](http://dispy.sourceforge.net/dispy.html) as its distribution system, for managing the cluster and submitting jobs to the cluster. It also requires [hashid](https://github.com/psypanda/hashID) which is used to identify the type of hashing algorithm used to encrypt the password that is being cracked. The Incredible Machine also requires a default wordlist, which is set to [rockyou.txt](https://github.com/danielmiessler/SecLists/blob/master/Passwords/Leaked-Databases/rockyou-20.txt), this list is used for the default wordlist mode. This wordlist can be replaced by changing using another wordlist and changing the read file in the modeList() function in the source code. These dependencies are automatically installed if the installScriptMainNode(for master/main/head node (link)) and installScriptSlaveNode(for other nodes(link)) are installed. Apart from this The Incredible Machine utilizes python 3 with the module OS which needs to be installed in the Raspberry Pi’s that are in use. 
+The Incredible Machine requires nmap for node discovery(slave nodes) for usage in brute force wordlist chunk size numeration. It requires [dispy](http://dispy.sourceforge.net/dispy.html) as its distribution system, for managing the cluster and submitting jobs to the cluster. It also requires [hashid](https://github.com/psypanda/hashID) which is used to identify the type of hashing algorithm used to encrypt the password that is being cracked. The Incredible Machine also requires a default wordlist, which is set to [rockyou.txt](https://github.com/danielmiessler/SecLists/blob/master/Passwords/Leaked-Databases/rockyou-20.txt), this list is used for the default wordlist mode. This wordlist can be replaced by changing using another wordlist and changing the read file in the modeList() function in the source code. These dependencies are automatically installed if the [installScriptMainNode](https://github.com/Rednewspaper/The-Incredible-Machine/blob/master/installScriptMainNode)(for master/main/head node (link)) and installScriptSlaveNode(for other nodes(link)) are installed. Apart from this The Incredible Machine utilizes python 3 with the module OS which needs to be installed in the Raspberry Pi’s that are in use. 
 
 ## Installation
 
-To collect The Incredible Machine and install its dependencies for the main node, collect and run installScriptMainNode(link to script):
+To collect The Incredible Machine and install its dependencies for the main node, collect and run [installScriptMainNode](https://github.com/Rednewspaper/The-Incredible-Machine/blob/master/installScriptMainNode):
 
 (in command block)
 chmod +x installScriptMainNode
@@ -37,7 +37,7 @@ chmod +x installScriptSlaveNode
 
 In order for the program to work as intended a couple of ip addresses has to be changed in the source code. These addresses are that of the master/main node and of the subnet where the slave nodes are located. These changes do not have to be done if this guide(link to guide) for setting up your Raspberry Pi’s on the 10.0.0.0/24 subnet has been performed. Otherwise the changes can be by doing this:
 
-Enter the folder where you ran the installScriptMainNode(link to script).
+Enter the folder where you ran the [installScriptMainNode](https://github.com/Rednewspaper/The-Incredible-Machine/blob/master/installScriptMainNode).
 
 (in command block)
 nano INCMACHINE0.0.[version].py
@@ -80,7 +80,7 @@ This ip address is the address you want the program to use, default(without -i) 
 
 ### Main Node:
 
-Enter the folder where you ran the installScriptMainNode(link to script).
+Enter the folder where you ran the [installScriptMainNode](https://github.com/Rednewspaper/The-Incredible-Machine/blob/master/installScriptMainNode).
 
 (in command block)
 python3 INCMACHINE0.0.5a.py 
