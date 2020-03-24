@@ -6,16 +6,16 @@ The Incredible Machine works with Python version 3.1+. It has been designed for 
 
 ## Features
 
-Hash cracking of custom password by default wordlist  with [rockyou.txt](https://github.com/danielmiessler/SecLists/blob/master/Passwords/Leaked-Databases/rockyou-20.txt).
-Hash cracking of custom password by custom wordlist, user submitted.
-Hash cracking of custom password by bruteforce wordlist, generated using custom user depth.
-Password computations are divided in chunks for distribution as jobs. These chunks are decided by the amount of nodes and wordlist length. 
-Capabilities for detecting MD5 and SHA-256 hashing algorithms, by utilizing [hashid](https://github.com/psypanda/hashID).
-Capabilities for cracking MD5 and SHA-256 encrypted hashes.
+* Hash cracking of custom password by default wordlist  with [rockyou.txt](https://github.com/danielmiessler/SecLists/blob/master/Passwords/Leaked-Databases/rockyou-20.txt).
+* Hash cracking of custom password by custom wordlist, user submitted.
+* Hash cracking of custom password by bruteforce wordlist, generated using custom user depth.
+* Password computations are divided in chunks for distribution as jobs. These chunks are decided by the amount of nodes and wordlist length. 
+* Capabilities for detecting MD5 and SHA-256 hashing algorithms, by utilizing [hashid](https://github.com/psypanda/hashID).
+* Capabilities for cracking MD5 and SHA-256 encrypted hashes.
 
 ## Dependencies
 
-The Incredible Machine requires nmap for node discovery(slave nodes) for usage in brute force wordlist chunk size numeration. It requires [dispy](http://dispy.sourceforge.net/dispy.html) as its distribution system, for managing the cluster and submitting jobs to the cluster. It also requires [hashid](https://github.com/psypanda/hashID) which is used to identify the type of hashing algorithm used to encrypt the password that is being cracked. The Incredible Machine also requires a default wordlist, which is set to [rockyou.txt](https://github.com/danielmiessler/SecLists/blob/master/Passwords/Leaked-Databases/rockyou-20.txt), this list is used for the default wordlist mode. This wordlist can be replaced by changing using another wordlist and changing the read file in the modeList() function in the source code. These dependencies are automatically installed if the [installScriptMainNode](https://github.com/Rednewspaper/The-Incredible-Machine/blob/master/installScriptMainNode)(for master/main/head node (link)) and installScriptSlaveNode(for other nodes(link)) are installed. Apart from this The Incredible Machine utilizes python 3 with the module OS which needs to be installed in the Raspberry Pi’s that are in use. 
+The Incredible Machine requires nmap for node discovery(slave nodes) for usage in brute force wordlist chunk size numeration. It requires [dispy](http://dispy.sourceforge.net/dispy.html) as its distribution system, for managing the cluster and submitting jobs to the cluster. It also requires [hashid](https://github.com/psypanda/hashID) which is used to identify the type of hashing algorithm used to encrypt the password that is being cracked. The Incredible Machine also requires a default wordlist, which is set to [rockyou.txt](https://github.com/danielmiessler/SecLists/blob/master/Passwords/Leaked-Databases/rockyou-20.txt), this list is used for the default wordlist mode. This wordlist can be replaced by changing using another wordlist and changing the read file in the modeList() function in the source code. These dependencies are automatically installed if the [installScriptMainNode](https://github.com/Rednewspaper/The-Incredible-Machine/blob/master/installScriptMainNode)(for master/main/head node) and [installScriptSlaveNode](https://github.com/Rednewspaper/The-Incredible-Machine/blob/master/installScriptSlaveNode)(for other nodes) are installed. Apart from this The Incredible Machine utilizes python 3 with the module OS which needs to be installed in the Raspberry Pi’s that are in use. 
 
 ## Installation
 
@@ -26,7 +26,7 @@ chmod +x installScriptMainNode
 ./installScriptMainNode
 (stop command block)
 
-To install The Incredible Machine dependencies, collect and run installScriptSlaveNode(link to script):
+To install The Incredible Machine dependencies, collect and run [installScriptSlaveNode](https://github.com/Rednewspaper/The-Incredible-Machine/blob/master/installScriptSlaveNode):
 
 (in command block)
 chmod +x installScriptSlaveNode
