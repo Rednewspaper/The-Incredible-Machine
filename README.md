@@ -22,16 +22,16 @@ The Incredible Machine requires nmap for node discovery(slave nodes) for usage i
 To collect The Incredible Machine and install its dependencies for the main node, collect and run [installScriptMainNode](https://github.com/Rednewspaper/The-Incredible-Machine/blob/master/installScriptMainNode):
 
 ``` 
-chmod +x installScriptMainNode
-./installScriptMainNode
+$ chmod +x installScriptMainNode
+$ ./installScriptMainNode
 ```
 
 To install The Incredible Machine dependencies, collect and run [installScriptSlaveNode](https://github.com/Rednewspaper/The-Incredible-Machine/blob/master/installScriptSlaveNode):
 
-(in command block)
-chmod +x installScriptSlaveNode
-./installScriptSlaveNode
-(stop command block)
+```
+$ chmod +x installScriptSlaveNode
+$ ./installScriptSlaveNode
+```
 
 ## Initial Configurations
 
@@ -39,26 +39,26 @@ In order for the program to work as intended a couple of ip addresses has to be 
 
 Enter the folder where you ran the [installScriptMainNode](https://github.com/Rednewspaper/The-Incredible-Machine/blob/master/installScriptMainNode).
 
-(in command block)
-nano INCMACHINE0.0.[version].py
-(stop command block)
+```
+$ nano INCMACHINE0.0.[version].py
+```
 
 Scroll to the countNodes() function and change the following line:
 
 
 
-(in command block)
-os.system(‘nmap -p 61591 [Subnet ip] | grep open > newresult.txt’)
-(stop command block)
+```
+$ os.system(‘nmap -p 61591 [Subnet ip] | grep open > newresult.txt’)
+```
 
 Scroll to the mainLogic() function and change the following line:
 
 
 
 
-(in command block)
-Cluster = dispy.JobCluster(crackPwd, ip_addr=’[IP address of master node]’)
-(stop command block)
+```
+$ Cluster = dispy.JobCluster(crackPwd, ip_addr=’[IP address of master node]’)
+```
 
 ## Usage
 
@@ -66,15 +66,15 @@ Cluster = dispy.JobCluster(crackPwd, ip_addr=’[IP address of master node]’)
 
 Enter the dispy folder  on the slave nodes, which can be accessed using the following command:
 
-(in command block)
-cd /home/[USER]/.local/lib
-(stop command block)
+```
+$ cd /home/[USER]/.local/lib
+```
 
 Start the dispynode.py program which executes jobs submitted by clients:
 
-(in command block)
-python3 dispynode.py -i [IP ADDRESS]
-(stop command block)
+```
+$ python3 dispynode.py -i [IP ADDRESS]
+```
 
 This ip address is the address you want the program to use, default(without -i) is localhost. It needs to be specified and match that of the interface you want to use(example eth0 or wlan0). A guide on how to setup the Raspberry Pi’s nodes within the 10.0.0.0/24 subnet on eth0 is provided here(link to guide). If this guide is used the Pi’s will use the addresses 10.0.0.2-[amount of nodes].
 
@@ -82,9 +82,9 @@ This ip address is the address you want the program to use, default(without -i) 
 
 Enter the folder where you ran the [installScriptMainNode](https://github.com/Rednewspaper/The-Incredible-Machine/blob/master/installScriptMainNode).
 
-(in command block)
-python3 INCMACHINE0.0.5a.py 
-(stop command block)
+```
+$ python3 INCMACHINE0.0.5a.py 
+```
 
 ## Authors
 
