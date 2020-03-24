@@ -88,7 +88,7 @@ python3 INCMACHINE0.0.5a.py
 
 ## Authors
 
-..* Lewis Campbell
-..* Gustav Martin Kvilhaug Magnussen
-..* Kenny Carlos Hernandez Aguilera
+* Lewis Campbell
+* Gustav Martin Kvilhaug Magnussen
+* Kenny Carlos Hernandez Aguilera
 
