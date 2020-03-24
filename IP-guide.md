@@ -17,9 +17,9 @@ The next step would be to actually SSH into your Pi’s, if the computer you are
 
 Using Linux subsystem you can easily SSH into your Pi’s by opening your Linux subsystem from the Windows search bar. The command you need to enter is:
 
-´´´
+```
 $ ssh pi@[IP-ADDRESS OF PI]
-´´´
+```
 
 The default name of your Pi’s is “pi”, if this has been changed you will need to command to your hostname. If this is the first time you are SSH into your Pi’s you will need to accept the prompt that is displayed.
 
@@ -44,20 +44,20 @@ Having done this you will be prompted to enter the login and password of the Pi.
 
 Having gained access to your Pi you will need to edit the dhcpcd.conf file which enables the usage of a static ip address. This file can be access and edited by using this command:
 
-´´´
+```
 $ sudo nano /etc/dhcpcd.conf
-´´´
+```
 Having entered this file the following needs to be added on the bottom of the file.
 
-´´´
+```
 interface eth0
 static ip_address=10.0.0.1/24
-´´´
+```
 
 For each subsequent Pi configured this ip address has to be changed to the next in line. We advise to have the master node as the Pi with the address 10.0.0.1/24 and any subsequent as 10.0.0.2/24, 10.0.0.3/24 and so forth.
 
 For this changes to take effect the Pi’s should be rebooted using this command:
 
-´´´
+```
 $ sudo reboot
-´´´
+```
