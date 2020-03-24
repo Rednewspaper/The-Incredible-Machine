@@ -37,7 +37,7 @@ $ ./installScriptSlaveNode
 
 ## Initial Configurations
 
-In order for the program to work as intended a couple of ip addresses has to be changed in the source code. These addresses are that of the master/main node and of the subnet where the slave nodes are located. These changes do not have to be done if this guide(link to guide) for setting up your Raspberry Pi’s on the 10.0.0.0/24 subnet has been performed. Otherwise the changes can be by doing this:
+In order for the program to work as intended a couple of ip addresses has to be changed in the source code. These addresses are that of the master/main node and of the subnet where the slave nodes are located. These changes do not have to be done if this [guide](https://github.com/Rednewspaper/The-Incredible-Machine/blob/master/IP-guide.md#step-3) for setting up your Raspberry Pi’s on the 10.0.0.0/24 subnet has been performed. Otherwise the changes can be by doing this:
 
 Enter the folder where you ran the [installScriptMainNode](https://github.com/Rednewspaper/The-Incredible-Machine/blob/master/installScriptMainNode).
 
@@ -78,7 +78,7 @@ Start the dispynode.py program which executes jobs submitted by clients:
 $ python3 dispynode.py -i [IP ADDRESS]
 ```
 
-This ip address is the address you want the program to use, default(without -i) is localhost. It needs to be specified and match that of the interface you want to use(example eth0 or wlan0). A guide on how to setup the Raspberry Pi’s nodes within the 10.0.0.0/24 subnet on eth0 is provided here(link to guide). If this guide is used the Pi’s will use the addresses 10.0.0.2-[amount of nodes].
+This ip address is the address you want the program to use, default(without -i) is localhost. It needs to be specified and match that of the interface you want to use(example eth0 or wlan0). A guide on how to setup the Raspberry Pi’s nodes within the 10.0.0.0/24 subnet on eth0 is provided [here](https://github.com/Rednewspaper/The-Incredible-Machine/blob/master/IP-guide.md#step-3). If this guide is used the Pi’s will use the addresses 10.0.0.2-[amount of nodes].
 
 ### Main Node:
 
