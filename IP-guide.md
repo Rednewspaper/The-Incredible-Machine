@@ -2,7 +2,7 @@
 
 ## Step 1
 
-To start setting up the IP 's on the 10.0.0.0/24 subnet, you first need to gain access to your Pi’s. This can either be done by connecting the Pi’s to peripherals or connecting to the Pi’s  through SSH. If you have access to the Pi’s through peripherals you can skip directly to [Step 3](## Step 3). 
+To start setting up the IP 's on the 10.0.0.0/24 subnet, you first need to gain access to your Pi’s. This can either be done by connecting the Pi’s to peripherals or connecting to the Pi’s  through SSH. If you have access to the Pi’s through peripherals you can skip directly to [Step 3](#Step 3). 
 
 If you are not able  to SSH into your Raspberry Pi’s(due to it being set up from a Buster lite image) you can follow this [guide](https://www.hackster.io/najad/enable-ssh-on-raspberry-pi-without-monitor-keyboard-210dc4) for enabling SSH on the buster lite OS. 
 
