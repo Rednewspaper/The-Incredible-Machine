@@ -99,7 +99,7 @@ def getHashType(password, hashMode):
 
         data.close()
         os.remove('hashType.txt')
-        hashType = 'MD5'  #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        hashType = 'MD5'  
     return hashType
 
 
@@ -111,10 +111,13 @@ def generateBruteWordlist():
     print ("Under construction")
     menuMode()
 
-def winScreen(pswd, passHash):
-    print ("Victory")
-    print (passHash, "=", pswd)
+def winScreen(paswd, password):
     
+    print ("Victory")
+    print (password, "=", paswd)
+    
+    #print ("Unable to crack", password, "using the method you selected")
+
     restart = input("Do you want to crack another hash/retry hash using another method?(y/n):")
     if restart == "y" or restart == "Y":
         menuMode()
@@ -135,7 +138,7 @@ def job_callback(job): # executed at the client
         jobs_cond.release()
 def mainLogic(password, wordList, hashMode):
     global pending_jobs, jobs_cond, lower_bound
-    win = False
+    #win = False
     hashType = getHashType(password, hashMode)
     password = "5c7686c0284e0875b26de99c1008e998"
     lower_bound, upper_bound = 50, 100
@@ -149,7 +152,6 @@ def mainLogic(password, wordList, hashMode):
     cluster = dispy.JobCluster(crackLinePwd, ip_addr='10.0.0.1', callback=job_callback)
     pending_jobs = {}
     # submit 1000 jobs
-    
     for line in wordList:
         job = cluster.submit(line, hashType, password)
         jobs_cond.acquire()
@@ -162,23 +164,16 @@ def mainLogic(password, wordList, hashMode):
                 while len(pending_jobs) > lower_bound:
                     jobs_cond.wait()
         jobs_cond.release()
-
         paswd = job()
         if paswd:
             winScreen(paswd, password)
-        
-    cluster.wait()
-    cluster.print_status()
-    cluster.close() 
-     
+    
     print ("Unable to crack", password, "using the method you selected")
-
     restart = input("Do you want to crack another hash/retry hash using another method?(y/n):")
     if restart == "y" or restart == "Y":
         menuMode()
     else:
         exit()
-
     cluster.wait()
     cluster.print_status()
     cluster.close()
