@@ -26,13 +26,11 @@ def crackPwd(chunk, hashType, password):
         elif hashType == "SHA512":
             testHash = hashlib.sha512(item.encode('utf-8')).hexdigest()
         if testHash == password:
-            #print("test")
             return item
     return False
 
 def testBruteLogic(password, hashType):
     jobs=[]
-    #print("test")
     start_time = time.time()
     for passwordLength in range(1, 6):
         job = crackBrute(password, hashType, itertools.product("abcdefghijklmnopqrstuvwxyz", repeat=passwordLength))
@@ -47,13 +45,11 @@ def testWordListLogic(password, wordList, hashType):
     jobs=[]
     chunkList = splitListIntoTasks(wordList)
     start_time = time.time()
-    #print("test1")
     for line in chunkList:
         job=crackPwd(line, hashType, password)
         jobs.append(job)
     for row in jobs:
         if row:
-            #print("tas")
             print("--- %s seconds ---" % (time.time() - start_time))
             print (password, "=", row)
             
