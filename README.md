@@ -6,7 +6,7 @@ The Incredible Machine works with Python version 3.1+. It has been designed for 
 
 ## Features
 
-* Hash cracking of custom password by default wordlist  with [rockyou.txt](https://github.com/danielmiessler/SecLists/blob/master/Passwords/Leaked-Databases/rockyou-20.txt).
+* Hash cracking of custom password by default wordlist  with [1-000-000.txt](https://github.com/danielmiessler/SecLists/blob/master/Passwords/Common-Credentials/10-million-password-list-top-100.txt).
 * Hash cracking of custom password by custom wordlist, user submitted.
 * Hash cracking of custom password by bruteforce wordlist, generated using custom user depth.
 * Password computations are divided in chunks for distribution as jobs. These chunks are decided by the amount of nodes and wordlist length. 
