@@ -40,7 +40,7 @@ In order for the program to work as intended a couple of ip addresses has to be 
 Enter the folder where you ran the [INCSETUP.sh](https://github.com/Rednewspaper/The-Incredible-Machine/blob/master/INCSETUP.sh).
 
 ```
-$ nano INCMACHINE0.0.1.py
+$ sudo nano INCMACHINE0.0.1.py
 ```
 
 Scroll to the countNodes() function and change the following line:
