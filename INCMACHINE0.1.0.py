@@ -2,7 +2,6 @@ import dispy
 import threading
 import hashlib
 import os
-import numpy
 import itertools
 
 def countNodes():
@@ -151,7 +150,7 @@ def generateBrute(password, hashType):
 
 def bruteLogic(password, hashType, depth):
     """Control function for submitting jobs to cluster while in bruteforce mode"""
-    cluster = dispy.JobCluster(crackBrute, ip_addr='10.0.0.12')
+    cluster = dispy.JobCluster(crackBrute, ip_addr='10.0.0.1')
     jobs=[]
     #TIME_START
     for passwordLength in range(1, depth+1):
@@ -209,7 +208,7 @@ def mainLogic(password, wordList, hashMode):
 
     # 'job_callback' is executed in another thread
     jobs_cond = threading.Condition()
-    cluster = dispy.JobCluster(crackPwd, ip_addr='10.0.0.12', callback=job_callback)
+    cluster = dispy.JobCluster(crackPwd, ip_addr='10.0.0.1', callback=job_callback)
     pending_jobs = {}
     fin_jobs=[]
     chunkList = splitListIntoTasks(wordList)
