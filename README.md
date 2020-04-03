@@ -29,8 +29,8 @@ To collect The Incredible Machine and install its dependencies collect and run [
 
 ``` 
 $ wget https://github.com/Rednewspaper/The-Incredible-Machine/blob/master/INCSETUP.sh
-$ chmod +x installScriptMainNode
-$ ./installScriptMainNode
+$ chmod +x INCSETUP.sh
+$ ./INCSETUP.sh
 ```
 
 ## Initial Configurations
@@ -45,8 +45,6 @@ $ nano INCMACHINE0.0.1.py
 
 Scroll to the countNodes() function and change the following line:
 
-
-
 ```
 $ os.system(‘nmap -p 61591 [Subnet ip] | grep open > newresult.txt’)
 ```
@@ -55,7 +53,13 @@ Scroll to the mainLogic() function and change the following line:
 
 
 ```
-$ Cluster = dispy.JobCluster(crackPwd, ip_addr=’[IP address of master node]’)
+$ Cluster = dispy.JobCluster(crackPwd, ip_addr=’[IP address of master node]’, callback=job_callback)
+```
+
+The ip address in the bruteLogic also needs to be changed, scroll to the bruteLogic() and change the following line:
+
+```
+$ cluster = dispy.JobCluster(crackBrute, ip_addr='[IP address of master node]')
 ```
 
 ## Usage
