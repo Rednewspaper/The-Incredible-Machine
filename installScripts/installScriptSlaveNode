@@ -1,6 +1,0 @@
-#!/bin/sh
-
-apt-get update  -y # To get the latest package lists
-apt-get upgrade -y # Installing the latest version of packages
-
-pip3 install dispy #Install dispy
