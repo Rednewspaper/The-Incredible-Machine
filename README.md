@@ -10,8 +10,8 @@ The Incredible Machine works with Python version 3.1+. It has been designed for 
 * Hash cracking of custom password by custom wordlist, user submitted.
 * Hash cracking of custom password by bruteforce wordlist, generated using custom user depth.
 * Password computations are divided in chunks for distribution as jobs. These chunks are decided by the amount of nodes and wordlist length. 
-* Capabilities for detecting MD5 and SHA-256 hashing algorithms, by utilizing [hashid](https://github.com/psypanda/hashID).
-* Capabilities for cracking MD5 and SHA-256 encrypted hashes.
+* Capabilities for detecting MD5, SHA-1, SHA-224, SHA-256, SHA-384 and SHA-512 hashing algorithms, by utilizing [hashid](https://github.com/psypanda/hashID).
+* Capabilities for cracking MD5, SHA-1, SHA-224, SHA-256, SHA-384 and SHA-512 encrypted hashes.
 
 ## Dependencies
 
