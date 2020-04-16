@@ -4,6 +4,11 @@ The Incredible Machine is easy to use password cracker that utilize two or more 
 
 The Incredible Machine works with Python version 3.1+. It has been designed for usage in a Linux environment, it has been tested with Raspbian buster lite on a Raspberry Pi. 
 
+## Disclaimer
+
+THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+
 ## Features
 
 * Hash cracking of custom password by default wordlist  with the wordlist: [1000-000-passwords.txt
