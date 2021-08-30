@@ -98,5 +98,4 @@ $ python3 INCMACHINE0.0.5a.py
 
 * [Lewis Campbell](https://github.com/Rednewspaper)
 * [Gustav Martin Kvilhaug Magnussen](https://github.com/Gustav-Magnussen)
-* [Kenny Carlos Hernandez Aguilera](https://github.com/cahe0603)
 
