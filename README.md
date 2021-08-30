@@ -91,7 +91,7 @@ This ip address is the address you want the program to use, default(without -i) 
 Enter the folder where you ran the [INCSETUP.SH](https://github.com/Rednewspaper/The-Incredible-Machine/blob/master/INCSETUP.sh) and run the program.
 
 ```
-$ python3 INCMACHINE0.0.5a.py 
+$ python3 INCMACHINE0.1.0.py
 ```
 
 ## Authors
